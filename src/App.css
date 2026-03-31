@@ -1,7 +1,63 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Topbar ── */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 28px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+@media (prefers-color-scheme: dark) {
+  .topbar {
+    background: rgba(22, 23, 29, 0.7);
+  }
+}
+
+.topbar-brand {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+}
+
+.topbar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.topbar-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+
+/* ── Main content ── */
 .app {
   max-width: 550px;
+  width: 100%;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 20px 60px;
+  flex: 1;
 }
 
 h1 {
@@ -23,7 +79,7 @@ h1 {
   font-size: 16px;
   border: 2px solid var(--border);
   border-radius: 6px;
-  background: var(--bg);
+  background: var(--card);
   color: var(--text-h);
   outline: none;
   transition: border-color 0.2s;
@@ -52,14 +108,22 @@ h1 {
   list-style: none;
   padding: 0;
   margin: 0;
+  background: var(--card);
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
 }
 
 .todo-list li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
+  padding: 14px 18px;
   border-bottom: 1px solid var(--border);
+}
+
+.todo-list li:last-child {
+  border-bottom: none;
 }
 
 .todo-list li label {
@@ -109,7 +173,7 @@ h1 {
   color: #e53e3e;
 }
 
-.footer {
+.todo-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -143,4 +207,17 @@ h1 {
 .filters button.active {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* ── Page footer ── */
+.page-footer {
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 13px;
+  color: var(--text);
+  border-top: 1px solid var(--border);
+}
+
+.page-footer p {
+  margin: 4px 0;
 }
