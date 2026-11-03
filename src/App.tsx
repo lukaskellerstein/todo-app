@@ -1,13 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import { sampleTodos, type Todo } from './todos'
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>(sampleTodos)
-
-  useEffect(() => {
-    setTodos(sampleTodos)
-  }, [sampleTodos])
   const [input, setInput] = useState('')
   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all')
 

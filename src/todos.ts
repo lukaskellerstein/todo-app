@@ -12,3 +12,9 @@ export const sampleTodos: Todo[] = [
   { id: 5, text: 'Update project dependencies', completed: true },
   { id: 6, text: 'Go for a 30-minute run', completed: false },
 ]
+
+// Fast Refresh keeps component state, so an edit here would not reach the list.
+// Reload the page instead, so useState starts again from the new data.
+if (import.meta.hot) {
+  import.meta.hot.accept(() => window.location.reload())
+}

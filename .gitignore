@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# demo-video-plugin — media is regenerable, the source of truth is storyboard.json
+demo/capture/
+demo/audio/
+demo/out/
+demo/studio/node_modules/
+demo/timeline.json
+demo/prep/state/
